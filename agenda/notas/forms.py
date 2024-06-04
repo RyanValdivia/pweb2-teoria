@@ -7,6 +7,11 @@ class NotaForm(forms.ModelForm):
     contenido = models.TextField()
 
     class Meta:
-        model = Notas
+        model = Nota
         fields = ['fecha', 'titulo', 'contenido']
 
+    def save(self, commit=True):
+        nota = super().save(commit=False)
+        if commit:
+            nota.save()
+        return nota
