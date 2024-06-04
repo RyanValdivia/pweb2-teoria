@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Notas(models.Model):  
+class Nota(models.Model):  
     fecha = models.DateField()
     titulo = models.CharField(max_length = 100)
     contenido = models.TextField()
