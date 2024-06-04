@@ -11,8 +11,8 @@ def crear_nota(request):
             return redirect('lista_notas')
     else:
         form = NotaForm()
-    return render(request, 'crearNota.html', {'form': form})
+    return render(request, 'notas/crearNota.html', {'form': form})
 
 def lista_notas(request):
     notas = Nota.objects.all()
-    return render(request, 'index.html', {'notas': notas})
+    return render(request, 'notas/index.html', {'notas': notas})
