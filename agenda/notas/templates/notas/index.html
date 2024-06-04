@@ -9,12 +9,20 @@
     <link rel="stylesheet" href="{% static 'index.css' %}">
 </head>
 <body>
-    <div>
-        {% for nota in notas %}
-        <h1>{{nota.titulo}}</h1>
-        <p>{{nota.contenido}}</p>
-        <p>{{nota.fecha}}
-        {% endfor%}
+    <div class="container">
+        <header>
+            <h1>Agenda 2024</h1>
+            <a href="{% url 'crear_nota' %}" class="create-button">Crear Nota</a>
+        </header>
+        <div class="notas">
+            {% for nota in notas %}
+            <div class="nota">
+                <h2>{{nota.titulo}}</h2>
+                <p>{{nota.contenido}}</p>
+                <p class="fecha">{{nota.fecha}}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
