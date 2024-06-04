@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="{% static 'form.css' %}">
 </head>
 <body>
-    <div>
+    <div class="container">
+        <h1>Creando Nota</h1>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Guardar</button>
+            <button type="submit" class="btn-submit">Guardar</button>
+            <a href="{% url 'lista_notas' %}" class="btn-back">Volver al Inicio</a>
         </form>
     </div>
 </body>
